@@ -4,6 +4,7 @@ resources:
     ae_sim_pipeline:
       name: ae_sim_pipeline
       target: ae_sim_${bundle.environment}
+      allow_duplicate_names: true
       libraries:
         - notebook:
             path: ../src/ae-sim-elt-build.ipynb
