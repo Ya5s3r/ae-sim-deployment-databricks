@@ -3,6 +3,10 @@
 bundle:
   name: ae_sim
 
+run_as:
+  service_principal_name: "dad6aa45-6871-4065-9918-7d3310b62ae9"
+
+  
 include:
   - resources/*.yml
 
