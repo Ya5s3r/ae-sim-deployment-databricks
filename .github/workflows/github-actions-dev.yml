@@ -62,4 +62,4 @@ jobs:
         working-directory: .
         env:
           DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
-          DATABRICKS_BUNDLE_ENV: qa
+          DATABRICKS_BUNDLE_ENV: dev
