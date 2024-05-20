@@ -3,6 +3,11 @@
 bundle:
   name: ae_sim
 
+variables:
+  sp_name:
+    description: The service principal ID.
+    default: dad6aa45-6871-4065-9918-7d3310b62ae9
+
 include:
   - resources/*.yml
 
@@ -34,8 +39,7 @@ targets:
       host: https://adb-1133143286450047.7.azuredatabricks.net
       # We always use /Users/yasser.mushtaq@hotmail.com for all resources to make sure we only have a single copy.
       # If this path results in an error, please make sure you have a recent version of the CLI installed.
-      root_path: /Users/yasser_dev/.bundle/${bundle.name}/${bundle.target}
-      #/Users/yasser.mushtaq@hotmail.com/.bundle/${bundle.name}/${bundle.target}
+      root_path: /Users/${var.sp_name}/.bundle/${bundle.name}/${bundle.target}
     run_as:
       # By default this runs with user email by default in production. We could also use a service principal here,
       # see https://docs.databricks.com/dev-tools/bundles/permissions.html.
