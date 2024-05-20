@@ -28,13 +28,6 @@ jobs:
       # Check out this repo, so that this workflow can access it.
       - uses: actions/checkout@v3
 
-      - name: Set environment variables
-        run: echo "DATABRICKS_HOST=${{ secrets.DB_HOST }}" >> $GITHUB_ENV
-
-      - name: Replace placeholders in config files
-        run: |
-          find . -type f -name "*.yml" -exec sed -i 's|{{DATABRICKS_HOST}}|${DATABRICKS_HOST}|g' {} +
-
       # Download the Databricks CLI.
       # See https://github.com/databricks/setup-cli
       - uses: databricks/setup-cli@main
