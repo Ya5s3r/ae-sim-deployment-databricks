@@ -36,6 +36,7 @@ targets:
       # If this path results in an error, please make sure you have a recent version of the CLI installed.
       root_path: /Users/yasser.mushtaq@hotmail.com/.bundle/${bundle.name}/${bundle.target}
     run_as:
-      # This runs as yasser.mushtaq@hotmail.com in production. We could also use a service principal here,
+      # By default this runs with user email by default in production. We could also use a service principal here,
       # see https://docs.databricks.com/dev-tools/bundles/permissions.html.
-      user_name: yasser.mushtaq@hotmail.com
+      # user_name: xxx.xxx@xxx.com
+      service_principal_name: "dad6aa45-6871-4065-9918-7d3310b62ae9"
