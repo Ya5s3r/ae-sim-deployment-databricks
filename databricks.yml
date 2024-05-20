@@ -37,8 +37,9 @@ targets:
     mode: production
     workspace:
       host: https://adb-1133143286450047.7.azuredatabricks.net
-      # We always use /Users/yasser.mushtaq@hotmail.com for all resources to make sure we only have a single copy.
+      # default always use /Users/user@email.com for all resources to make sure we only have a single copy.
       # If this path results in an error, please make sure you have a recent version of the CLI installed.
+      # amended below to use SP id in path not user email
       root_path: /Users/${var.sp_name}/.bundle/${bundle.name}/${bundle.target}
     run_as:
       # By default this runs with user email by default in production. We could also use a service principal here,
