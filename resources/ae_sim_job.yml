@@ -10,9 +10,10 @@ resources:
         quartz_cron_expression: '44 37 8 * * ?'
         timezone_id: Europe/Amsterdam
 
-      email_notifications:
-        on_failure:
-          - yasser.mushtaq@hotmail.com
+      # can send an email on pipeline failure, although GitHub will also do this
+      # email_notifications:
+      #   on_failure:
+      #     - user@email.com
 
       tasks:
         - task_key: refresh_pipeline
