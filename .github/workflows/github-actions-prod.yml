@@ -47,6 +47,11 @@ jobs:
       # Check out this repo, so that this workflow can access it.
       - uses: actions/checkout@v3
 
+      # Replace placeholders in the config files with the secret value.
+      - name: Replace email placeholder in config files
+        run: |
+          find . -type f -name "*.yaml" -exec sed -i 's/{{DATABRICKS_EMAIL}}/${{ secrets.DATABRICKS_EMAIL }}/g' {} +
+
       # Use the downloaded Databricks CLI.
       - uses: databricks/setup-cli@main
 
