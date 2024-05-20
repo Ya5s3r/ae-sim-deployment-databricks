@@ -38,5 +38,5 @@ targets:
     run_as:
       # By default this runs with user email by default in production. We could also use a service principal here,
       # see https://docs.databricks.com/dev-tools/bundles/permissions.html.
-      # user_name: xxx.xxx@xxx.com
-      service_principal_name: "dad6aa45-6871-4065-9918-7d3310b62ae9"
+      user_name: yasser.mushtaq@hotmail.com
+      # service_principal_name: "dad6aa45-6871-4065-9918-7d3310b62ae9"
