@@ -20,15 +20,16 @@ targets:
     # - The 'development' mode is used for Delta Live Tables pipelines
     mode: development
     default: true
+    # below we normally define a workspace host, but here we declare in GitHub Actions env
     # workspace:
-    #   host: https://adb-1133143286450047.7.azuredatabricks.net
+    #   host: https://xxxxxx.x.azuredatabricks.net
 
   ## Optionally, there could be a 'staging' target here.
   ## (See Databricks docs on CI/CD at https://docs.databricks.com/dev-tools/bundles/ci-cd.html.)
   #
   # staging:
   #   workspace:
-  #     host: https://adb-1133143286450047.7.azuredatabricks.net
+  #     host: https://xxxxxx.x.azuredatabricks.net
 
   # The 'prod' target, used for production deployment.
   prod:
@@ -36,7 +37,7 @@ targets:
     # Doing so enables strict verification of the settings below.
     mode: production
     workspace:
-      # host: https://adb-1133143286450047.7.azuredatabricks.net
+      # host: https://xxxxxx.x.azuredatabricks.net
       # default always use /Users/user@email.com for all resources to make sure we only have a single copy.
       # If this path results in an error, please make sure you have a recent version of the CLI installed.
       # amended below to use SP id in path not user email
