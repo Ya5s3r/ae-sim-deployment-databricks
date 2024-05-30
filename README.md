@@ -1,6 +1,6 @@
 # Simulation Data Engineering - Part 2
 
-The first part of this project orchestrated simulation data generation, which eventually landed in Azure storage.
+The first part of this project [here](https://github.com/Ya5s3r/ae-sim-data-engineering) orchestrated simulation data generation, which eventually landed in Azure storage.
 
 This part now deploys a Databricks Asset Bundle (DAB) - which is infrastructure as code for Databricks.
 
