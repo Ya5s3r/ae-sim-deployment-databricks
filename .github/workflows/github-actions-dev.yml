@@ -36,14 +36,15 @@ jobs:
       # in the bundle's settings file.
       - run: databricks bundle deploy
         working-directory: .
-        env:
-          #DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
+        env:          
           # below as described here: https://learn.microsoft.com/en-us/azure/databricks/dev-tools/auth/oauth-m2m
           # below we use params for machine to machine auth based on service principal - better than user auth
           DATABRICKS_BUNDLE_ENV: dev
+          DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
+          DATABRICKS_ACCOUNT_ID: ${{ secrets.DB_USER }}
           DATABRICKS_HOST: ${{ secrets.DB_HOST }}
-          DATABRICKS_CLIENT_ID: ${{ secrets.SP_ID }}
-          DATABRICKS_CLIENT_SECRET: ${{ secrets.SP_SECRET }}
+          # DATABRICKS_CLIENT_ID: ${{ secrets.SP_ID }}
+          # DATABRICKS_CLIENT_SECRET: ${{ secrets.SP_SECRET }}
 
   # Validate, deploy, and then run the bundle.
   pipeline_update:
@@ -66,8 +67,9 @@ jobs:
       - run: databricks bundle run ae_sim_pipeline  --refresh-all
         working-directory: .
         env:
-          #DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
           DATABRICKS_BUNDLE_ENV: dev
+          DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
+          DATABRICKS_ACCOUNT_ID: ${{ secrets.DB_USER }}
           DATABRICKS_HOST: ${{ secrets.DB_HOST }}
-          DATABRICKS_CLIENT_ID: ${{ secrets.SP_ID }}
-          DATABRICKS_CLIENT_SECRET: ${{ secrets.SP_SECRET }}
+          # DATABRICKS_CLIENT_ID: ${{ secrets.SP_ID }}
+          # DATABRICKS_CLIENT_SECRET: ${{ secrets.SP_SECRET }}
