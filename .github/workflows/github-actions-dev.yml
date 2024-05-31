@@ -42,7 +42,7 @@ jobs:
           DATABRICKS_BUNDLE_ENV: dev
           DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
           DATABRICKS_ACCOUNT_ID: ${{ secrets.DB_USER }}
-          # DATABRICKS_HOST: ${{ secrets.DB_HOST }}
+          DATABRICKS_HOST: ${{ secrets.DB_HOST }}
           # DATABRICKS_CLIENT_ID: ${{ secrets.SP_ID }}
           # DATABRICKS_CLIENT_SECRET: ${{ secrets.SP_SECRET }}
 
