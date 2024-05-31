@@ -38,7 +38,8 @@ jobs:
         working-directory: .
         env:          
           # below as described here: https://learn.microsoft.com/en-us/azure/databricks/dev-tools/auth/oauth-m2m
-          # below we use params for machine to machine auth based on service principal - better than user auth
+          # below we use params for machine to machine auth based on account ID and token 
+          # you can also use service principal - better than user auth for prod
           DATABRICKS_BUNDLE_ENV: dev
           DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
           DATABRICKS_ACCOUNT_ID: ${{ secrets.DB_USER }}
